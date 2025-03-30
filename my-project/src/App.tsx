@@ -4,11 +4,38 @@ import ProtectedRoute from './ProtectedRoute';
 import './App.css';
 import { Link } from 'react-router-dom';
 
+
+interface Product {
+  product_image: string;
+  product_name: string;
+}
+interface Order {
+  order_del_id: number;
+  product: Product;
+  product_amount: number;
+  order_del_date: string;
+  order_id: number;
+}
+// const myProduct: ProductType = {
+//   product: "example",
+//   product_amount: 10,
+//   order_del_date: "2025-12-31",
+// };
+interface History {
+  package_id: number;
+  package_amount: number;
+  customer_firstname: string;
+  customer_lastname: string;
+  package_status: string;
+  history_id: number;
+}
+
+
 function OrderTablePage() {
-  const [order, setOrder] = useState([]);
-  const [size, setSize] = useState(0);
-  const [hissize, setHissize] = useState(0);
-  const [history, setHistory] = useState([]);
+  const [order, setOrder] = useState<Order[]>([]);
+  const [size, setSize] = useState<number>(0);
+  const [hissize, setHissize] = useState<number>(0);
+  const [history, setHistory] = useState<History[]>([]);
 
   // ดึงข้อมูล orders จาก backend เมื่อ component โหลด
   useEffect(() => {
