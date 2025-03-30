@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Menupage from '../menupage';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ function History_page() {
     const navegate = useNavigate();
     const [history, setHistory] = useState<History[]>([]);
     const [filteredOrder, setFilteredOrder] = useState<History[]>([]);
-    const [size, setSize] = useState(0);
+    // const [size, setSize] = useState(0);
     const [statusFilter, setStatusFilter] = useState('all'); // 'all', 'packed', 'unpacked'
 
     const fetchOrdersAndBoxes = async () => {
@@ -28,7 +28,7 @@ function History_page() {
 
             setHistory(dataOrders.history);
             setFilteredOrder(dataOrders.history);
-            setSize(dataOrders.history ? dataOrders.history.length : 0);
+            // setSize(dataOrders.history ? dataOrders.history.length : 0);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
