@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Menupage from './components/menupage';
 import ProtectedRoute from './ProtectedRoute';
 import './App.css';
@@ -16,11 +16,6 @@ interface Order {
   order_del_date: string;
   order_id: number;
 }
-// const myProduct: ProductType = {
-//   product: "example",
-//   product_amount: 10,
-//   order_del_date: "2025-12-31",
-// };
 interface History {
   package_id: number;
   package_amount: number;
