@@ -146,7 +146,7 @@ const Box = ({
       </Text>
 
       {/* Products */}
-      {products.map((product, index) => {
+      {products.map((product) => {
         const x = startX + product.product_length / 8 + product.package_box_x / 4;
         const y = startY + product.product_height / 8 + product.package_box_y / 4;
         const z = startZ + product.product_width / 8 + product.package_box_z / 4;
